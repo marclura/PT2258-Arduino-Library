@@ -47,6 +47,9 @@ Remember to deactivate the mute to ear the sound.
 The PT2258 has the volume of all the channels at the maximum when it powers on (and the mute active as well, see "Mute" above).
 
 
+---
+
+
 ## Functions
 
 ### PT2258 (address)
@@ -91,7 +94,3 @@ Set the volume of all the channels at once. Volume from 0 (min) to 100 (max)
 Mute control for all the channels. No matter the volume, the channels will stay silent. It has to be disabled to hear something. Mute active (1, true) or mute not active (0, false)
 
 `void mute(bool mute)`
-
-
----
-Created by Marco Lurati, April 21, 2023
