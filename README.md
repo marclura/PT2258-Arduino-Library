@@ -1,7 +1,9 @@
 # PT2258-Arduino-Library
 Arduino Library to control the 6-Channel Electronic Volume Controller PT2258
 
-## PT2258 address
+## Setup
+
+### PT2258 address
 
 (1: connected to VCC, 0: connected to GND)
 
@@ -27,14 +29,14 @@ If you need to change it, crete the PT2258 object like this:
 Example: `PT2258 myPT2258(0x84);`
 
 
-## Wire connection
+### Wire connection
 The PT2258 is specified to work with a bus clock speed of 100kHz max.
 
 Add `Wire.setClock(100000);` in the sutup before calling the begin() funtion for
 the PT2258.
 
 
-## Mute
+### Mute
 The PT2258 has the mute on all the channels activated by default when it does power
 up as a safety measure.
 
@@ -43,7 +45,7 @@ When the mute is active, even if the volume is changed, the channels will remain
 Remember to deactivate the mute to ear the sound.
 
 
-## Initial volume
+### Initial volume
 The PT2258 has the volume of all the channels at the maximum when it powers on (and the mute active as well, see "Mute" above).
 
 
