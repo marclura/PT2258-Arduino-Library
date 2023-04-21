@@ -1,0 +1,12 @@
+# Syntax Coloring Map For PT2258
+
+# Datatypes (KEYWORD1)
+PT2258	KEYWORD1
+
+# Methods and Functions (KEYWORD2)
+begin	KEYWORD2
+attenuation	KEYWORD2
+attenuationAll	KEYWORD2
+volume	KEYWORD2
+volumeAll	KEYWORD2
+mute	KEYWORD2
