@@ -24,7 +24,7 @@ If you need to change it, crete the PT2258 object like this:
 
 `PT2258 pt2258(address);` // where the address is a 8bit address (check the table for conversion)
 
-Example: `PT2258 pt2258(0x84);`
+Example: `PT2258 myPT2258(0x84);`
 
 
 ## Wire connection
@@ -45,9 +45,6 @@ Remember to deactivate the mute to ear the sound.
 
 ## Initial volume
 The PT2258 has the volume of all the channels at the maximum when it powers on (and the mute active as well, see "Mute" above).
-
-
----
 
 
 ## Functions
