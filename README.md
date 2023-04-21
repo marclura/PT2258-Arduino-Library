@@ -2,7 +2,6 @@
 Arduino Library to control the 6-Channel Electronic Volume Controller PT2258
 
 ## PT2258 address
----
 
 (1: connected to VCC, 0: connected to GND)
 
@@ -29,7 +28,6 @@ Example: `PT2258 pt2258(0x84);`
 
 
 ## Wire connection
----
 The PT2258 is specified to work with a bus clock speed of 100kHz max.
 
 Add `Wire.setClock(100000);` in the sutup before calling the begin() funtion for
@@ -37,7 +35,6 @@ the PT2258.
 
 
 ## Mute
----
 The PT2258 has the mute on all the channels activated by default when it does power
 up as a safety measure.
 
@@ -47,60 +44,51 @@ Remember to deactivate the mute to ear the sound.
 
 
 ## Initial volume
----
 The PT2258 has the volume of all the channels at the maximum when it powers on (and the mute active as well, see "Mute" above).
 
 
 ## Functions
----
 
 ### PT2258 (address)
-@brief PT2258 Datatype declaration
-@param address Set the IC address, default 0x88, it uses the address from the datasheet
+Create a new PT2258 Datatype declaration. Set the I2C address of the IC address (read the PT2258 address paragraph on top for correct use).
 
 `PT2258(uint8_t address)`
 
+Example: `PT2258 myPT2258(0x88);`
+
 
 ### begin()
-@brief Start the I2C communication
-@return Return 1:successful, 0:connection error
+Start the I2C communication. Returns 1:successful, 0:connection error
 
 `uint8_t begin(void)`
 
 
-### attenuation(db)
-@brief Set the individual channel attenuation in db
-@param channel Channel to set, form 1 to 6
-@param db Attenuation in db from 0 (0db) to 79 (79db)
+### attenuation(channel, attenuation)
+Set the individual channel attenuation in db. Indicate the channel number form 1 to 6 to set. Attenuation in db from 0 (0db) to 79 (79db)
 
 `void attenuation(uint8_t channel,  uint8_t attenuation)`
 
 
-### attenuationAll(db)
-@brief Set the attenuation of all the channels at once in db
-@param db Attenuation in db from 0 (0db) to 79 (79db)
+### attenuationAll(attenuation)
+Set the attenuation of all the channels at once in db. Attenuation in db from 0 (0db) to 79 (79db)
 
 `void attenuationAll(uint8_t attenuation)`
 
 
 ### volume(channel, volume)
-@brief Set the individual channel attenuation in db
-@param channel Channel to set, form 1 to 6
-@param volume Volume from 0 (min) to 100 (max)
+Set the individual channel volume. Indicate the channel number form 1 to 6 to set. Volume from 0 (min) to 100 (max)
 
 `void volume(uint8_t channel,  uint8_t volume)`
 
 
 ### volumeAll(volume)
-@brief Set the attenuation of all the channels at once in db
-@param volume Volume from 0 (min) to 100 (max)
+Set the volume of all the channels at once. Volume from 0 (min) to 100 (max)
 
 `void volumeAll(uint8_t volume)`
 
 
 ### mute(boolean)
-@brief Mute control for all the channels. No matter the volume, the channels will stay silent. It has to be disabled to hear something.
-@param mute Mute active (1, true) or mute not active (0, false)
+Mute control for all the channels. No matter the volume, the channels will stay silent. It has to be disabled to hear something. Mute active (1, true) or mute not active (0, false)
 
 `void mute(bool mute)`
 

@@ -108,7 +108,8 @@
 class PT2258 {
 public:
   /*!
-   * @param address Set the IC address, default 0x88, it uses the address from the datasheet
+   * @brief PT2258 Datatype declaration
+   * @param address Set the I2C address of the IC address (read the PT2258 address on top for correct use).
    */
   PT2258(uint8_t address);
 
@@ -132,14 +133,14 @@ public:
   void attenuationAll(uint8_t attenuation);
 
   /*!
-   * @brief Set the individual channel attenuation in db
+   * @brief Set the individual channel volume
    * @param channel Channel to set, form 1 to 6
    * @param volume Volume from 0 (min) to 100 (max)
    */
   void volume(uint8_t channel,  uint8_t volume);
 
    /*!
-   * @brief Set the attenuation of all the channels at once in db
+   * @brief Set the volume of all the channels at once
    * @param volume Volume from 0 (min) to 100 (max)
    */
   void volumeAll(uint8_t volume);
