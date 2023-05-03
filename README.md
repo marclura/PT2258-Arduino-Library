@@ -64,11 +64,15 @@ Start the I2C communication. Returns 1:successful, 0:connection error
 
 `uint8_t begin(void)`
 
+Example: `myPT2258.begin();`
+
 
 ### attenuation(channel, attenuation)
 Set the individual channel attenuation in db. Indicate the channel number form 1 to 6 to set. Attenuation in db from 0 (0db) to 79 (79db)
 
 `void attenuation(uint8_t channel,  uint8_t attenuation)`
+
+Example: `myPT2258.attenuation(2, 52);`
 
 
 ### attenuationAll(attenuation)
@@ -76,11 +80,15 @@ Set the attenuation of all the channels at once in db. Attenuation in db from 0 
 
 `void attenuationAll(uint8_t attenuation)`
 
+Example: `myPT2258.attenuationAll(12);`
+
 
 ### volume(channel, volume)
 Set the individual channel volume. Indicate the channel number form 1 to 6 to set. Volume from 0 (min) to 100 (max)
 
 `void volume(uint8_t channel,  uint8_t volume)`
+
+Example: `myPT2258.volume(3, 85);`
 
 
 ### volumeAll(volume)
@@ -88,8 +96,12 @@ Set the volume of all the channels at once. Volume from 0 (min) to 100 (max)
 
 `void volumeAll(uint8_t volume)`
 
+Example: `myPT2258.volumeAll(100);`
+
 
 ### mute(boolean)
 Mute control for all the channels. No matter the volume, the channels will stay silent. It has to be disabled to hear something. Mute active (1, true) or mute not active (0, false)
 
 `void mute(bool mute)`
+
+Example: `myPT2258.mute(true);`
