@@ -1,5 +1,6 @@
 # PT2258-Arduino-Library
-Arduino Library to control the 6-Channel Electronic Volume Controller PT2258
+Arduino Library to control the [6-Channel Electronic Volume Controller PT2258](https://www.princeton.com.tw/%E7%94%A2%E5%93%81%E7%B8%BD%E8%A6%BD/Multimedia-Audio-IC/Electronic-Volume-Controller/Electronic-Volume-Controller-6-Channels)
+
 
 ## Setup
 
@@ -16,7 +17,7 @@ Arduino Library to control the 6-Channel Electronic Volume Controller PT2258
 ```
 
 The Wire library uses addresses with 7bit, so if you perform an I2C scan,
-the address will appear as right-shifted form the one specified
+the address will appear as right-shifted from the one specified
 above and in the data sheet.
 Example: I2C scan finds 0x44 -> this means that the PT2258 has the address 0x88
 
@@ -68,7 +69,7 @@ Example: `myPT2258.begin();`
 
 
 ### attenuation(channel, attenuation)
-Set the individual channel attenuation in db. Indicate the channel number form 1 to 6 to set. Attenuation in db from 0 (0db) to 79 (79db)
+Set the individual channel attenuation in db. Indicate the channel number from 1 to 6 to set. Attenuation in db from 0 (0db) to 79 (79db)
 
 `void attenuation(uint8_t channel,  uint8_t attenuation)`
 
@@ -84,7 +85,7 @@ Example: `myPT2258.attenuationAll(12);`
 
 
 ### volume(channel, volume)
-Set the individual channel volume. Indicate the channel number form 1 to 6 to set. Volume from 0 (min) to 100 (max)
+Set the individual channel volume. Indicate the channel number from 1 to 6 to set. Volume from 0 (min) to 100 (max)
 
 `void volume(uint8_t channel,  uint8_t volume)`
 
