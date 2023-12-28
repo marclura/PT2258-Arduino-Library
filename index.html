@@ -68,7 +68,18 @@ Introduction</h1>
 <h2><a class="anchor" id="autotoc_md0"></a>
 PT2258 address</h2>
 <p >(1: connected to VCC, 0: connected to GND)</p>
-<p >| CODE1 | CODE2 | ADDRESS 8bit | ADDRESS 7bit | | 0 | 0 | 0x80 | 0x40 | | 1 | 0 | 0x88 | 0x44 | | 0 | 1 | 0x84 | 0x42 | | 1 | 1 | 0x8C | 0x46 |</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">CODE1   </th><th class="markdownTableHeadCenter">CODE2   </th><th class="markdownTableHeadCenter">ADDRESS 8bit   </th><th class="markdownTableHeadCenter">ADDRESS 7bit    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0x80   </td><td class="markdownTableBodyCenter">0x40    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0x88   </td><td class="markdownTableBodyCenter">0x44    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">0x84   </td><td class="markdownTableBodyCenter">0x42    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">0x8C   </td><td class="markdownTableBodyCenter">0x46   </td></tr>
+</table>
 <p >The Wire library uses addresses with 7bit, so if you perform an I2C scan, the address will appear as right-shifted form the one specified above and in the data sheet. Example: I2C scan finds 0x44 -&gt; this means that the <a class="el" href="classPT2258.html">PT2258</a> has the address 0x88</p>
 <p >The default address used by the library is 0x88.</p>
 <p >If you need to change it, crete the <a class="el" href="classPT2258.html">PT2258</a> object like this:</p>
