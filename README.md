@@ -1,7 +1,9 @@
 # PT2258-Arduino-Library
 
 [![license](https://img.shields.io/github/license/peaceiris/actions-gh-pages.svg)](https://github.com/peaceiris/actions-gh-pages/blob/main/LICENSE)
+[![Release Version](https://img.shields.io/github/v/release/marclura/PT2258-Arduino-Library?include_prereleases)](https://github.com/marclura/PT2258-Arduino-Library/releases)
 [![doxygen](https://img.shields.io/badge/doxygen%20documentation-view-blue)](https://marclura.github.io/PT2258-Arduino-Library)
+
 
 Arduino Library to control the [6-Channel Electronic Volume Controller PT2258](https://www.princeton.com.tw/%E7%94%A2%E5%93%81%E7%B8%BD%E8%A6%BD/Multimedia-Audio-IC/Electronic-Volume-Controller/Electronic-Volume-Controller-6-Channels)
 
