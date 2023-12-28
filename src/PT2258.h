@@ -1,4 +1,4 @@
-/*
+/**
   @file PT2258.h
 
   @mainpage PT2258 Arduino Library
@@ -126,7 +126,7 @@ public:
 
 private:
   /*!
-   * @param {number} current - IC address 
+   * @param current - IC address 
    */
   uint8_t address;
   void PT2258Send(uint8_t a, uint8_t b);

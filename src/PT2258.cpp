@@ -1,4 +1,4 @@
-/*
+/**
   @file PT2258.cpp
 
   @mainpage PT2258 Arduino Library
@@ -62,7 +62,7 @@ uint8_t channel_address_10[6] = {
 /*!
   * @brief PT2258 Datatype declaration Class Constructor
   * 
-  * @param {number} address - Set the I2C address of the IC address (read the PT2258 address on top for correct use).
+  * @param address - Set the I2C address of the IC address (read the PT2258 address on top for correct use).
   */
 PT2258::PT2258(uint8_t _address)
 {
@@ -72,7 +72,7 @@ PT2258::PT2258(uint8_t _address)
 /*!
   * @brief Start the I2C communication
   * 
-  * @return {number} Return 1:successful, 0:connection error
+  * @return Return 1:successful, 0:connection error
   */
 uint8_t PT2258::begin(void)
 {
@@ -92,8 +92,8 @@ uint8_t PT2258::begin(void)
 /*!
   * @brief Set the individual channel attenuation in db
   * 
-  * @param {number} channel - Channel to set, form 1 to 6
-  * @param {number} db - Attenuation in db from 0 (0db) to 79 (79db)
+  * @param channel - Channel to set, form 1 to 6
+  * @param db - Attenuation in db from 0 (0db) to 79 (79db)
   */
 void PT2258::attenuation(uint8_t channel, uint8_t attenuation)
 {
@@ -107,7 +107,7 @@ void PT2258::attenuation(uint8_t channel, uint8_t attenuation)
 /*!
   * @brief Set the attenuation of all the channels at once in db
   * 
-  * @param {number} - db Attenuation in db from 0 (0db) to 79 (79db)
+  * @param db Attenuation in db from 0 (0db) to 79 (79db)
   */
 void PT2258::attenuationAll(uint8_t attenuation)
 {
@@ -121,8 +121,8 @@ void PT2258::attenuationAll(uint8_t attenuation)
  /*!
   * @brief Set the individual channel volume
   * 
-  * @param {number} channel - Channel to set, form 1 to 6
-  * @param {number} volume - Volume from 0 (min) to 100 (max)
+  * @param channel Channel to set, form 1 to 6
+  * @param volume Volume from 0 (min) to 100 (max)
   */
 void PT2258::volume(uint8_t channel, uint8_t volume)
 {
@@ -136,7 +136,7 @@ void PT2258::volume(uint8_t channel, uint8_t volume)
 /*!
   * @brief Set the volume of all the channels at once
   *
-  * @param {number} volume - Volume from 0 (min) to 100 (max)
+  * @param volume Volume from 0 (min) to 100 (max)
   */
 void PT2258::volumeAll(uint8_t volume)
 {
@@ -150,7 +150,7 @@ void PT2258::volumeAll(uint8_t volume)
   * @brief Mute control for all the channels. No matter the volume, the channels will stay silent.
   * It has to be disabled to hear something.
   * 
-  * @param {number} mute - Mute active (1, true) or mute not active (0, false)
+  * @param mute Mute active (1, true) or mute not active (0, false)
   */
 void PT2258::mute(bool mute)
 {
@@ -162,8 +162,8 @@ void PT2258::mute(bool mute)
 /*!
    * @brief Send the datas to the IC
    *
-   * @param {number} a - 10dB byte value
-   * @param {number} b - 1dB byte value
+   * @param a 10dB byte value
+   * @param b 1dB byte value
    */
 void PT2258::PT2258Send(uint8_t a, uint8_t b)
 {
