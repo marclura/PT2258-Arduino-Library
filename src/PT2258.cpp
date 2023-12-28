@@ -91,6 +91,11 @@
   
 */
 
+/*!
+  PT2258-Arduino-Library example
+  @example PT2258_ML_example_full/PT2258_ML_example_full.ino
+*/
+
 #include <Arduino.h>
 #include <Wire.h>
 #include "PT2258.h"
