@@ -7,6 +7,8 @@
 
   This library is to control the 6-Channel Electronic Volume Controller IC PT2258
 
+  [Github repository]: https://github.com/marclura/PT2258-Arduino-Library
+
   PT2258 address
   ----------------------------------------------------------------------------------
 
