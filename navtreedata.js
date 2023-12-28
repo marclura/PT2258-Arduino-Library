@@ -25,18 +25,29 @@
 var NAVTREE =
 [
   [ "PT2258 Arduino Library", "index.html", [
-    [ "Introduction", "index.html#intro_sec", null ],
+    [ "Introduction", "index.html#intro_sec", [
+      [ "PT2258 address", "index.html#autotoc_md0", null ],
+      [ "Wire connection", "index.html#autotoc_md1", null ],
+      [ "Mute", "index.html#autotoc_md2", null ],
+      [ "Initial volume", "index.html#autotoc_md3", null ]
+    ] ],
     [ "Author", "index.html#author", null ],
     [ "License", "index.html#license", null ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Fields", "functions.html", [
         [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ]
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ]
+      [ "File List", "files.html", "files_dup" ],
+      [ "Globals", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Variables", "globals_vars.html", null ],
+        [ "Macros", "globals_defs.html", null ]
+      ] ]
     ] ]
   ] ]
 ];

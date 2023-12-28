@@ -67,145 +67,93 @@ $(document).ready(function(){initNavTree('PT2258_8h_source.html',''); initResiza
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  @mainpage PT2258 Arduino Library</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"></span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  @section intro_sec Introduction</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  @section author Author</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"></span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">  This library is to control the 6-Channel Electronic Volume Controller IC PT2258</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">  Created by Marco Lurati, April 21, 2023</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">  PT2258 address</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  ----------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"></span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">  (1: connected to VCC, 0: connected to GND)</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"></span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">  | CODE1 | CODE2 | ADDRESS 8bit | ADDRESS 7bit |</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">  |   0   |   0   |    0x80      |    0x40      |</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  |   1   |   0   |    0x88      |    0x44      |</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">  |   0   |   1   |    0x84      |    0x42      |</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  |   1   |   1   |    0x8C      |    0x46      |</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"></span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">  The Wire library uses addresses with 7bit, so if you perform an I2C scan,</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">  the address will appear as right-shifted form the one specified</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">  above and in the data sheet.</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">  Example: I2C scan finds 0x44 -&gt; this means that the PT2258 has the address 0x88</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">  @section license License</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  </span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">  MIT License</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"></span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">  Copyright (c) 2023 marclura</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"></span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">  in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  copies of the Software, and to permit persons to whom the Software is</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">  furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"></span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">  The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">  copies or substantial portions of the Software.</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"></span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">  The default address used by the library is 0x88.</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"></span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">  If you need to change it, crete the PT2258 object like this:</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"></span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">  PT2258 pt2258(address); // where the address is a 8bit address (check the table for conversion)</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"></span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">  Example: PT2258 pt2258(0x84);</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">  SOFTWARE.</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"></span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"></span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">  Wire connection</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">  ----------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">  The PT2258 is specified to work with a bus clock speed of 100kHz max.</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"></span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">  Add Wire.setClock(100000); in the sutup before calling the begin() funtion for</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">  the PT2258.</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"></span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"></span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">  Mute</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">  ----------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">  The PT2258 has the mute on all the channels activated by default when it does power</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">  up as a safety measure.</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"></span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">  When the mute is active, even if the volume is changed, the channels will remain silent.</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment"></span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">  Remember to deactivate the mute to ear the sound.</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment"></span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment"></span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">  Initial volume</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">  ----------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">  The PT2258 has the volume of all the channels at the maximum when it powers on (and the mute</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">  active as well, see &quot;Mute&quot; above).</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment"></span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">  ----------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment"></span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">  @section author Author</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment"></span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">  Created by Marco Lurati, April 21, 2023</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment"></span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">  @section license License</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">  </span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">  MIT License</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment"></span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">  Copyright (c) 2023 marclura</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment"></span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">  in the Software without restriction, including without limitation the rights</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">  copies of the Software, and to permit persons to whom the Software is</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">  furnished to do so, subject to the following conditions:</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment"></span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">  The above copyright notice and this permission notice shall be included in all</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">  copies or substantial portions of the Software.</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment"></span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">  SOFTWARE.</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment"></span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#ifndef PT2258_h</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">#define PT2258_h</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">/* channel addresses */</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">#define PT2258_CLEAR_REGISTER 0b11000000 </span><span class="comment">// 0xC0</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#define PT2258_CHALL_1        0b11100000 </span><span class="comment">// 0xE0</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#define PT2258_CHALL_10       0b11010000 </span><span class="comment">// 0xD0</span></div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#define PT2258_CH3_1          0b00010000 </span><span class="comment">// 0x10</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="preprocessor">#define PT2258_CH3_10         0b00000000 </span><span class="comment">// 0x00</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#define PT2258_CH4_1          0b00110000 </span><span class="comment">// 0x30 </span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">#define PT2258_CH4_10         0b00100000 </span><span class="comment">// 0x20</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">#define PT2258_CH2_1          0b01010000 </span><span class="comment">// 0x50</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="preprocessor">#define PT2258_CH2_10         0b01000000 </span><span class="comment">// 0x40</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="preprocessor">#define PT2258_CH5_1          0b01110000 </span><span class="comment">// 0x70</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="preprocessor">#define PT2258_CH5_10         0b01100000 </span><span class="comment">// 0x60</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="preprocessor">#define PT2258_CH1_1          0b10010000 </span><span class="comment">// 0x90</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="preprocessor">#define PT2258_CH1_10         0b10000000 </span><span class="comment">// 0x80</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">#define PT2258_CH6_1          0b10110000 </span><span class="comment">// 0xB0</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">#define PT2258_CH6_10         0b10100000 </span><span class="comment">// 0xA0</span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#define PT2258_CHALL_MUTE     0b11111000 </span><span class="comment">// 0xF8</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classPT2258.html">  115</a></span><span class="keyword">class </span><a class="code hl_class" href="classPT2258.html">PT2258</a> {</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <a class="code hl_class" href="classPT2258.html">PT2258</a>(uint8_t address);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  uint8_t <a class="code hl_function" href="classPT2258.html#a40f4167cc4fb5c43c1f577693d264081">begin</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classPT2258.html#aa870ada08d0f45d666edd1dcf487b09a">attenuation</a>(uint8_t channel,  uint8_t <a class="code hl_function" href="classPT2258.html#aa870ada08d0f45d666edd1dcf487b09a">attenuation</a>);</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classPT2258.html#a94109cbe54e3a96d3eae21c069c4470f">attenuationAll</a>(uint8_t <a class="code hl_function" href="classPT2258.html#aa870ada08d0f45d666edd1dcf487b09a">attenuation</a>);</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classPT2258.html#a5aa86cb082a72c671b30f7c556a72aee">volume</a>(uint8_t channel,  uint8_t <a class="code hl_function" href="classPT2258.html#a5aa86cb082a72c671b30f7c556a72aee">volume</a>);</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classPT2258.html#a03ebf22b515e0d0bdd728056dbb750b9">volumeAll</a>(uint8_t <a class="code hl_function" href="classPT2258.html#a5aa86cb082a72c671b30f7c556a72aee">volume</a>);</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classPT2258.html#a6400d008d4791e74be684d629dfbd409">mute</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="classPT2258.html#a6400d008d4791e74be684d629dfbd409">mute</a>);</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="keyword">private</span>:<span class="comment"></span></div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment">  /*!</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">   * @param current - IC address </span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment">   */</span></div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  uint8_t address;</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <span class="keywordtype">void</span> PT2258Send(uint8_t a, uint8_t b);</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>};</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassPT2258_html"><div class="ttname"><a href="classPT2258.html">PT2258</a></div><div class="ttdef"><b>Definition:</b> PT2258.h:115</div></div>
-<div class="ttc" id="aclassPT2258_html_a03ebf22b515e0d0bdd728056dbb750b9"><div class="ttname"><a href="classPT2258.html#a03ebf22b515e0d0bdd728056dbb750b9">PT2258::volumeAll</a></div><div class="ttdeci">void volumeAll(uint8_t volume)</div><div class="ttdoc">Set the volume of all the channels at once.</div><div class="ttdef"><b>Definition:</b> PT2258.cpp:141</div></div>
-<div class="ttc" id="aclassPT2258_html_a40f4167cc4fb5c43c1f577693d264081"><div class="ttname"><a href="classPT2258.html#a40f4167cc4fb5c43c1f577693d264081">PT2258::begin</a></div><div class="ttdeci">uint8_t begin(void)</div><div class="ttdoc">Start the I2C communication.</div><div class="ttdef"><b>Definition:</b> PT2258.cpp:77</div></div>
-<div class="ttc" id="aclassPT2258_html_a5aa86cb082a72c671b30f7c556a72aee"><div class="ttname"><a href="classPT2258.html#a5aa86cb082a72c671b30f7c556a72aee">PT2258::volume</a></div><div class="ttdeci">void volume(uint8_t channel, uint8_t volume)</div><div class="ttdoc">Set the individual channel volume.</div><div class="ttdef"><b>Definition:</b> PT2258.cpp:127</div></div>
-<div class="ttc" id="aclassPT2258_html_a6400d008d4791e74be684d629dfbd409"><div class="ttname"><a href="classPT2258.html#a6400d008d4791e74be684d629dfbd409">PT2258::mute</a></div><div class="ttdeci">void mute(bool mute)</div><div class="ttdoc">Mute control for all the channels. No matter the volume, the channels will stay silent....</div><div class="ttdef"><b>Definition:</b> PT2258.cpp:155</div></div>
-<div class="ttc" id="aclassPT2258_html_a94109cbe54e3a96d3eae21c069c4470f"><div class="ttname"><a href="classPT2258.html#a94109cbe54e3a96d3eae21c069c4470f">PT2258::attenuationAll</a></div><div class="ttdeci">void attenuationAll(uint8_t attenuation)</div><div class="ttdoc">Set the attenuation of all the channels at once in db.</div><div class="ttdef"><b>Definition:</b> PT2258.cpp:112</div></div>
-<div class="ttc" id="aclassPT2258_html_aa870ada08d0f45d666edd1dcf487b09a"><div class="ttname"><a href="classPT2258.html#aa870ada08d0f45d666edd1dcf487b09a">PT2258::attenuation</a></div><div class="ttdeci">void attenuation(uint8_t channel, uint8_t attenuation)</div><div class="ttdoc">Set the individual channel attenuation in db.</div><div class="ttdef"><b>Definition:</b> PT2258.cpp:98</div></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#ifndef PT2258_h</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#define PT2258_h</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">/* channel addresses */</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="PT2258_8h.html#af40f4d9e44f41e3ffd62cafefe6c767e">   43</a></span><span class="preprocessor">#define PT2258_CLEAR_REGISTER 0b11000000 </span><span class="comment">// 0xC0</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="PT2258_8h.html#ae8285cb9cbbb128887261216f3b9414e">   44</a></span><span class="preprocessor">#define PT2258_CHALL_1        0b11100000 </span><span class="comment">// 0xE0</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="PT2258_8h.html#afec3abb0960d4ec74d6300e37b22762f">   45</a></span><span class="preprocessor">#define PT2258_CHALL_10       0b11010000 </span><span class="comment">// 0xD0</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="PT2258_8h.html#a5db7f64a83c1b52a0b7c317754fa095b">   46</a></span><span class="preprocessor">#define PT2258_CH3_1          0b00010000 </span><span class="comment">// 0x10</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="PT2258_8h.html#a7a43f577f744c54f7d7b08f29b433ee2">   47</a></span><span class="preprocessor">#define PT2258_CH3_10         0b00000000 </span><span class="comment">// 0x00</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="PT2258_8h.html#a98d189ed65dcafa4624a0f11cab5563a">   48</a></span><span class="preprocessor">#define PT2258_CH4_1          0b00110000 </span><span class="comment">// 0x30 </span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="PT2258_8h.html#a87d0b7c49c28526ef797ab3e8fedff42">   49</a></span><span class="preprocessor">#define PT2258_CH4_10         0b00100000 </span><span class="comment">// 0x20</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="PT2258_8h.html#ab0505f9d28aeddeef4e4e5b1fc2949b9">   50</a></span><span class="preprocessor">#define PT2258_CH2_1          0b01010000 </span><span class="comment">// 0x50</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="PT2258_8h.html#a5026dacce0c748db91f20f28b11e7c1e">   51</a></span><span class="preprocessor">#define PT2258_CH2_10         0b01000000 </span><span class="comment">// 0x40</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="PT2258_8h.html#a2d0f30ac4a645e0308b9c589475b50b2">   52</a></span><span class="preprocessor">#define PT2258_CH5_1          0b01110000 </span><span class="comment">// 0x70</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="PT2258_8h.html#a138906a3bf240df80b889938808c2ca3">   53</a></span><span class="preprocessor">#define PT2258_CH5_10         0b01100000 </span><span class="comment">// 0x60</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="PT2258_8h.html#adc637b07005f87affb50e0dbf9f7c658">   54</a></span><span class="preprocessor">#define PT2258_CH1_1          0b10010000 </span><span class="comment">// 0x90</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="PT2258_8h.html#aebbaf3cfa1264e2a65b36ff60fb92c66">   55</a></span><span class="preprocessor">#define PT2258_CH1_10         0b10000000 </span><span class="comment">// 0x80</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="PT2258_8h.html#acee88aabf63a64c0d9729c4e6c4d80c5">   56</a></span><span class="preprocessor">#define PT2258_CH6_1          0b10110000 </span><span class="comment">// 0xB0</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="PT2258_8h.html#a171e05409b944fe54a518de141d66ec5">   57</a></span><span class="preprocessor">#define PT2258_CH6_10         0b10100000 </span><span class="comment">// 0xA0</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="PT2258_8h.html#a899b51a58e40939474c901627e00672c">   58</a></span><span class="preprocessor">#define PT2258_CHALL_MUTE     0b11111000 </span><span class="comment">// 0xF8</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classPT2258.html">   61</a></span><span class="keyword">class </span><a class="code hl_class" href="classPT2258.html">PT2258</a> {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <a class="code hl_class" href="classPT2258.html">PT2258</a>(uint8_t <a class="code hl_variable" href="classPT2258.html#a1c3c56ffeb04e2814f1c5013de1d7575">address</a>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  uint8_t <a class="code hl_function" href="classPT2258.html#a40f4167cc4fb5c43c1f577693d264081">begin</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classPT2258.html#aa870ada08d0f45d666edd1dcf487b09a">attenuation</a>(uint8_t channel,  uint8_t <a class="code hl_function" href="classPT2258.html#aa870ada08d0f45d666edd1dcf487b09a">attenuation</a>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classPT2258.html#a94109cbe54e3a96d3eae21c069c4470f">attenuationAll</a>(uint8_t <a class="code hl_function" href="classPT2258.html#aa870ada08d0f45d666edd1dcf487b09a">attenuation</a>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classPT2258.html#a5aa86cb082a72c671b30f7c556a72aee">volume</a>(uint8_t channel,  uint8_t <a class="code hl_function" href="classPT2258.html#a5aa86cb082a72c671b30f7c556a72aee">volume</a>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classPT2258.html#a03ebf22b515e0d0bdd728056dbb750b9">volumeAll</a>(uint8_t <a class="code hl_function" href="classPT2258.html#a5aa86cb082a72c671b30f7c556a72aee">volume</a>);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classPT2258.html#a6400d008d4791e74be684d629dfbd409">mute</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="classPT2258.html#a6400d008d4791e74be684d629dfbd409">mute</a>);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keyword">private</span>:<span class="comment"></span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">  /*!</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">   * @param current - IC address </span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">   */</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classPT2258.html#a1c3c56ffeb04e2814f1c5013de1d7575">   77</a></span>  uint8_t <a class="code hl_variable" href="classPT2258.html#a1c3c56ffeb04e2814f1c5013de1d7575">address</a>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classPT2258.html#a02028ebfd9630eab4d5e188034ae84c9">PT2258Send</a>(uint8_t a, uint8_t b);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>};</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassPT2258_html"><div class="ttname"><a href="classPT2258.html">PT2258</a></div><div class="ttdef"><b>Definition:</b> PT2258.h:61</div></div>
+<div class="ttc" id="aclassPT2258_html_a02028ebfd9630eab4d5e188034ae84c9"><div class="ttname"><a href="classPT2258.html#a02028ebfd9630eab4d5e188034ae84c9">PT2258::PT2258Send</a></div><div class="ttdeci">void PT2258Send(uint8_t a, uint8_t b)</div><div class="ttdoc">Send the datas to the IC.</div><div class="ttdef"><b>Definition:</b> PT2258.cpp:218</div></div>
+<div class="ttc" id="aclassPT2258_html_a03ebf22b515e0d0bdd728056dbb750b9"><div class="ttname"><a href="classPT2258.html#a03ebf22b515e0d0bdd728056dbb750b9">PT2258::volumeAll</a></div><div class="ttdeci">void volumeAll(uint8_t volume)</div><div class="ttdoc">Set the volume of all the channels at once.</div><div class="ttdef"><b>Definition:</b> PT2258.cpp:191</div></div>
+<div class="ttc" id="aclassPT2258_html_a1c3c56ffeb04e2814f1c5013de1d7575"><div class="ttname"><a href="classPT2258.html#a1c3c56ffeb04e2814f1c5013de1d7575">PT2258::address</a></div><div class="ttdeci">uint8_t address</div><div class="ttdef"><b>Definition:</b> PT2258.h:77</div></div>
+<div class="ttc" id="aclassPT2258_html_a40f4167cc4fb5c43c1f577693d264081"><div class="ttname"><a href="classPT2258.html#a40f4167cc4fb5c43c1f577693d264081">PT2258::begin</a></div><div class="ttdeci">uint8_t begin(void)</div><div class="ttdoc">Start the I2C communication.</div><div class="ttdef"><b>Definition:</b> PT2258.cpp:127</div></div>
+<div class="ttc" id="aclassPT2258_html_a5aa86cb082a72c671b30f7c556a72aee"><div class="ttname"><a href="classPT2258.html#a5aa86cb082a72c671b30f7c556a72aee">PT2258::volume</a></div><div class="ttdeci">void volume(uint8_t channel, uint8_t volume)</div><div class="ttdoc">Set the individual channel volume.</div><div class="ttdef"><b>Definition:</b> PT2258.cpp:177</div></div>
+<div class="ttc" id="aclassPT2258_html_a6400d008d4791e74be684d629dfbd409"><div class="ttname"><a href="classPT2258.html#a6400d008d4791e74be684d629dfbd409">PT2258::mute</a></div><div class="ttdeci">void mute(bool mute)</div><div class="ttdoc">Mute control for all the channels. No matter the volume, the channels will stay silent....</div><div class="ttdef"><b>Definition:</b> PT2258.cpp:205</div></div>
+<div class="ttc" id="aclassPT2258_html_a94109cbe54e3a96d3eae21c069c4470f"><div class="ttname"><a href="classPT2258.html#a94109cbe54e3a96d3eae21c069c4470f">PT2258::attenuationAll</a></div><div class="ttdeci">void attenuationAll(uint8_t attenuation)</div><div class="ttdoc">Set the attenuation of all the channels at once in db.</div><div class="ttdef"><b>Definition:</b> PT2258.cpp:162</div></div>
+<div class="ttc" id="aclassPT2258_html_aa870ada08d0f45d666edd1dcf487b09a"><div class="ttname"><a href="classPT2258.html#aa870ada08d0f45d666edd1dcf487b09a">PT2258::attenuation</a></div><div class="ttdeci">void attenuation(uint8_t channel, uint8_t attenuation)</div><div class="ttdoc">Set the individual channel attenuation in db.</div><div class="ttdef"><b>Definition:</b> PT2258.cpp:148</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

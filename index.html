@@ -65,6 +65,28 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="textblock"><h1><a class="anchor" id="intro_sec"></a>
 Introduction</h1>
 <p >This library is to control the 6-Channel Electronic Volume Controller IC <a class="el" href="classPT2258.html">PT2258</a></p>
+<h2><a class="anchor" id="autotoc_md0"></a>
+PT2258 address</h2>
+<p >(1: connected to VCC, 0: connected to GND)</p>
+<p >| CODE1 | CODE2 | ADDRESS 8bit | ADDRESS 7bit | | 0 | 0 | 0x80 | 0x40 | | 1 | 0 | 0x88 | 0x44 | | 0 | 1 | 0x84 | 0x42 | | 1 | 1 | 0x8C | 0x46 |</p>
+<p >The Wire library uses addresses with 7bit, so if you perform an I2C scan, the address will appear as right-shifted form the one specified above and in the data sheet. Example: I2C scan finds 0x44 -&gt; this means that the <a class="el" href="classPT2258.html">PT2258</a> has the address 0x88</p>
+<p >The default address used by the library is 0x88.</p>
+<p >If you need to change it, crete the <a class="el" href="classPT2258.html">PT2258</a> object like this:</p>
+<p ><a class="el" href="classPT2258.html">PT2258</a> pt2258(address); // where the address is a 8bit address (check the table for conversion)</p>
+<p >Example: <a class="el" href="classPT2258.html">PT2258</a> pt2258(0x84);</p>
+<h2><a class="anchor" id="autotoc_md1"></a>
+Wire connection</h2>
+<p >The <a class="el" href="classPT2258.html">PT2258</a> is specified to work with a bus clock speed of 100kHz max.</p>
+<p >Add Wire.setClock(100000); in the sutup before calling the begin() funtion for the <a class="el" href="classPT2258.html">PT2258</a>.</p>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Mute</h2>
+<p >The <a class="el" href="classPT2258.html">PT2258</a> has the mute on all the channels activated by default when it does power up as a safety measure.</p>
+<p >When the mute is active, even if the volume is changed, the channels will remain silent.</p>
+<p >Remember to deactivate the mute to ear the sound.</p>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Initial volume</h2>
+<p >The <a class="el" href="classPT2258.html">PT2258</a> has the volume of all the channels at the maximum when it powers on (and the mute active as well, see "Mute" above).</p>
+<hr  />
 <h1><a class="anchor" id="author"></a>
 Author</h1>
 <p >Created by Marco Lurati, April 21, 2023</p>

@@ -60,14 +60,18 @@ $(document).ready(function(){initNavTree('classPT2258.html',''); initResizable()
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle"><div class="title">PT2258 Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="PT2258_8h_source.html">PT2258.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a443c4dcb30ccb2a77b01c8e3bdbce6a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPT2258.html#a443c4dcb30ccb2a77b01c8e3bdbce6a7">PT2258</a> (uint8_t address)</td></tr>
+<tr class="memitem:a443c4dcb30ccb2a77b01c8e3bdbce6a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPT2258.html#a443c4dcb30ccb2a77b01c8e3bdbce6a7">PT2258</a> (uint8_t <a class="el" href="classPT2258.html#a1c3c56ffeb04e2814f1c5013de1d7575">address</a>)</td></tr>
 <tr class="memdesc:a443c4dcb30ccb2a77b01c8e3bdbce6a7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classPT2258.html">PT2258</a> Datatype declaration Class Constructor.  <a href="classPT2258.html#a443c4dcb30ccb2a77b01c8e3bdbce6a7">More...</a><br /></td></tr>
 <tr class="separator:a443c4dcb30ccb2a77b01c8e3bdbce6a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa870ada08d0f45d666edd1dcf487b09a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPT2258.html#aa870ada08d0f45d666edd1dcf487b09a">attenuation</a> (uint8_t channel, uint8_t attenuation)</td></tr>
@@ -88,6 +92,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a03ebf22b515e0d0bdd728056dbb750b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPT2258.html#a03ebf22b515e0d0bdd728056dbb750b9">volumeAll</a> (uint8_t <a class="el" href="classPT2258.html#a5aa86cb082a72c671b30f7c556a72aee">volume</a>)</td></tr>
 <tr class="memdesc:a03ebf22b515e0d0bdd728056dbb750b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the volume of all the channels at once.  <a href="classPT2258.html#a03ebf22b515e0d0bdd728056dbb750b9">More...</a><br /></td></tr>
 <tr class="separator:a03ebf22b515e0d0bdd728056dbb750b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a02028ebfd9630eab4d5e188034ae84c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPT2258.html#a02028ebfd9630eab4d5e188034ae84c9">PT2258Send</a> (uint8_t a, uint8_t b)</td></tr>
+<tr class="memdesc:a02028ebfd9630eab4d5e188034ae84c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send the datas to the IC.  <a href="classPT2258.html#a02028ebfd9630eab4d5e188034ae84c9">More...</a><br /></td></tr>
+<tr class="separator:a02028ebfd9630eab4d5e188034ae84c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a1c3c56ffeb04e2814f1c5013de1d7575"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPT2258.html#a1c3c56ffeb04e2814f1c5013de1d7575">address</a></td></tr>
+<tr class="separator:a1c3c56ffeb04e2814f1c5013de1d7575"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a443c4dcb30ccb2a77b01c8e3bdbce6a7" name="a443c4dcb30ccb2a77b01c8e3bdbce6a7"></a>
@@ -109,7 +124,7 @@ Public Member Functions</h2></td></tr>
 <p><a class="el" href="classPT2258.html">PT2258</a> Datatype declaration Class Constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">address</td><td>- Set the I2C address of the IC address (read the <a class="el" href="classPT2258.html">PT2258</a> address on top for correct use). </td></tr>
+    <tr><td class="paramname">address</td><td>Set the I2C address of the IC address (read the <a class="el" href="classPT2258.html">PT2258</a> address on top for correct use). </td></tr>
   </table>
   </dd>
 </dl>
@@ -146,8 +161,8 @@ Public Member Functions</h2></td></tr>
 <p>Set the individual channel attenuation in db. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">channel</td><td>- Channel to set, form 1 to 6 </td></tr>
-    <tr><td class="paramname">db</td><td>- Attenuation in db from 0 (0db) to 79 (79db) </td></tr>
+    <tr><td class="paramname">channel</td><td>Channel to set, form 1 to 6 </td></tr>
+    <tr><td class="paramname">db</td><td>Attenuation in db from 0 (0db) to 79 (79db) </td></tr>
   </table>
   </dd>
 </dl>
@@ -227,6 +242,51 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a02028ebfd9630eab4d5e188034ae84c9" name="a02028ebfd9630eab4d5e188034ae84c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02028ebfd9630eab4d5e188034ae84c9">&#9670;&#160;</a></span>PT2258Send()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PT2258::PT2258Send </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Send the datas to the IC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>10dB byte value </td></tr>
+    <tr><td class="paramname">b</td><td>1dB byte value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a5aa86cb082a72c671b30f7c556a72aee" name="a5aa86cb082a72c671b30f7c556a72aee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5aa86cb082a72c671b30f7c556a72aee">&#9670;&#160;</a></span>volume()</h2>
 
@@ -284,6 +344,35 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">volume</td><td>Volume from 0 (min) to 100 (max) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a1c3c56ffeb04e2814f1c5013de1d7575" name="a1c3c56ffeb04e2814f1c5013de1d7575"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c3c56ffeb04e2814f1c5013de1d7575">&#9670;&#160;</a></span>address</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t PT2258::address</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">current</td><td>- IC address </td></tr>
   </table>
   </dd>
 </dl>
