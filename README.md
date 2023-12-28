@@ -12,13 +12,13 @@ Arduino Library to control the [6-Channel Electronic Volume Controller PT2258](h
 
 (1: connected to VCC, 0: connected to GND)
 
-```
 | CODE1 | CODE2 | ADDRESS 8bit | ADDRESS 7bit |
+|:-----:|:-----:|:------------:|:------------:|
 |   0   |   0   |    0x80      |    0x40      |
 |   1   |   0   |    0x88      |    0x44      |
 |   0   |   1   |    0x84      |    0x42      |
 |   1   |   1   |    0x8C      |    0x46      |
-```
+
 
 The Wire library uses addresses with 7bit, so if you perform an I2C scan,
 the address will appear as right-shifted from the one specified
