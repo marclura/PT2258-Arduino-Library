@@ -25,6 +25,9 @@
 var NAVTREE =
 [
   [ "PT2258 Arduino Library", "index.html", [
+    [ "Introduction", "index.html#intro_sec", null ],
+    [ "Author", "index.html#author", null ],
+    [ "License", "index.html#license", null ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Fields", "functions.html", [
@@ -40,7 +43,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"PT2258_8h_source.html"
+"PT2258_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -109,7 +109,7 @@ Public Member Functions</h2></td></tr>
 <p><a class="el" href="classPT2258.html">PT2258</a> Datatype declaration Class Constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{number}</td><td>address - Set the I2C address of the IC address (read the <a class="el" href="classPT2258.html">PT2258</a> address on top for correct use). </td></tr>
+    <tr><td class="paramname">address</td><td>- Set the I2C address of the IC address (read the <a class="el" href="classPT2258.html">PT2258</a> address on top for correct use). </td></tr>
   </table>
   </dd>
 </dl>
@@ -146,8 +146,8 @@ Public Member Functions</h2></td></tr>
 <p>Set the individual channel attenuation in db. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{number}</td><td>channel - Channel to set, form 1 to 6 </td></tr>
-    <tr><td class="paramname">{number}</td><td>db - Attenuation in db from 0 (0db) to 79 (79db) </td></tr>
+    <tr><td class="paramname">channel</td><td>- Channel to set, form 1 to 6 </td></tr>
+    <tr><td class="paramname">db</td><td>- Attenuation in db from 0 (0db) to 79 (79db) </td></tr>
   </table>
   </dd>
 </dl>
@@ -173,7 +173,7 @@ Public Member Functions</h2></td></tr>
 <p>Set the attenuation of all the channels at once in db. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{number}</td><td>- db Attenuation in db from 0 (0db) to 79 (79db) </td></tr>
+    <tr><td class="paramname">db</td><td>Attenuation in db from 0 (0db) to 79 (79db) </td></tr>
   </table>
   </dd>
 </dl>
@@ -197,7 +197,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Start the I2C communication. </p>
-<dl class="section return"><dt>Returns</dt><dd>{number} Return 1:successful, 0:connection error </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Return 1:successful, 0:connection error </dd></dl>
 
 </div>
 </div>
@@ -220,7 +220,7 @@ Public Member Functions</h2></td></tr>
 <p>Mute control for all the channels. No matter the volume, the channels will stay silent. It has to be disabled to hear something. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{number}</td><td>mute - Mute active (1, true) or mute not active (0, false) </td></tr>
+    <tr><td class="paramname">mute</td><td>Mute active (1, true) or mute not active (0, false) </td></tr>
   </table>
   </dd>
 </dl>
@@ -256,8 +256,8 @@ Public Member Functions</h2></td></tr>
 <p>Set the individual channel volume. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{number}</td><td>channel - Channel to set, form 1 to 6 </td></tr>
-    <tr><td class="paramname">{number}</td><td>volume - Volume from 0 (min) to 100 (max) </td></tr>
+    <tr><td class="paramname">channel</td><td>Channel to set, form 1 to 6 </td></tr>
+    <tr><td class="paramname">volume</td><td>Volume from 0 (min) to 100 (max) </td></tr>
   </table>
   </dd>
 </dl>
@@ -283,7 +283,7 @@ Public Member Functions</h2></td></tr>
 <p>Set the volume of all the channels at once. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{number}</td><td>volume - Volume from 0 (min) to 100 (max) </td></tr>
+    <tr><td class="paramname">volume</td><td>Volume from 0 (min) to 100 (max) </td></tr>
   </table>
   </dd>
 </dl>
@@ -292,7 +292,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="PT2258_8h_source.html">PT2258.h</a></li>
-<li>src/PT2258.cpp</li>
+<li>src/<a class="el" href="PT2258_8cpp.html">PT2258.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
