@@ -1,5 +1,6 @@
 var classPT2258 =
 [
+    [ "PT2258", "classPT2258.html#a443c4dcb30ccb2a77b01c8e3bdbce6a7", null ],
     [ "attenuation", "classPT2258.html#aa870ada08d0f45d666edd1dcf487b09a", null ],
     [ "attenuationAll", "classPT2258.html#a94109cbe54e3a96d3eae21c069c4470f", null ],
     [ "begin", "classPT2258.html#a40f4167cc4fb5c43c1f577693d264081", null ],
