@@ -3,60 +3,6 @@
 
   @mainpage PT2258 Arduino Library
 
-  @section intro_sec Introduction
-
-  This library is to control the 6-Channel Electronic Volume Controller IC PT2258
-
-  PT2258 address
-  ----------------------------------------------------------------------------------
-
-  (1: connected to VCC, 0: connected to GND)
-
-  | CODE1 | CODE2 | ADDRESS 8bit | ADDRESS 7bit |
-  |   0   |   0   |    0x80      |    0x40      |
-  |   1   |   0   |    0x88      |    0x44      |
-  |   0   |   1   |    0x84      |    0x42      |
-  |   1   |   1   |    0x8C      |    0x46      |
-
-  The Wire library uses addresses with 7bit, so if you perform an I2C scan,
-  the address will appear as right-shifted form the one specified
-  above and in the data sheet.
-  Example: I2C scan finds 0x44 -> this means that the PT2258 has the address 0x88
-
-  The default address used by the library is 0x88.
-
-  If you need to change it, crete the PT2258 object like this:
-
-  PT2258 pt2258(address); // where the address is a 8bit address (check the table for conversion)
-
-  Example: PT2258 pt2258(0x84);
-
-
-  Wire connection
-  ----------------------------------------------------------------------------------
-  The PT2258 is specified to work with a bus clock speed of 100kHz max.
-
-  Add Wire.setClock(100000); in the sutup before calling the begin() funtion for
-  the PT2258.
-
-
-  Mute
-  ----------------------------------------------------------------------------------
-  The PT2258 has the mute on all the channels activated by default when it does power
-  up as a safety measure.
-
-  When the mute is active, even if the volume is changed, the channels will remain silent.
-
-  Remember to deactivate the mute to ear the sound.
-
-
-  Initial volume
-  ----------------------------------------------------------------------------------
-  The PT2258 has the volume of all the channels at the maximum when it powers on (and the mute
-  active as well, see "Mute" above).
-
-  ----------------------------------------------------------------------------------
-
   @section author Author
 
   Created by Marco Lurati, April 21, 2023
