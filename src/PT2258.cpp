@@ -13,6 +13,7 @@
   (1: connected to VCC, 0: connected to GND)
 
   | CODE1 | CODE2 | ADDRESS 8bit | ADDRESS 7bit |
+  |:-----:|:-----:|:------------:|:------------:|
   |   0   |   0   |    0x80      |    0x40      |
   |   1   |   0   |    0x88      |    0x44      |
   |   0   |   1   |    0x84      |    0x42      |
