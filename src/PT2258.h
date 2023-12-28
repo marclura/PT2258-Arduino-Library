@@ -1,5 +1,9 @@
 /*
-  @file PT2258_ML_example.ino
+  @file PT2258.h
+
+  @mainpage PT2258 Arduino Library
+
+  @section intro_sec Introduction
 
   This library is to control the 6-Channel Electronic Volume Controller IC PT2258
 
@@ -52,7 +56,12 @@
   active as well, see "Mute" above).
 
   ----------------------------------------------------------------------------------
+
+  @section author Author
+
   Created by Marco Lurati, April 21, 2023
+
+  @section license License
   
   MIT License
 
@@ -102,61 +111,17 @@
 #define PT2258_CH6_10         0b10100000 // 0xA0
 #define PT2258_CHALL_MUTE     0b11111000 // 0xF8
 
-/*!
- * Maind PT2258 class 
- */
+
 class PT2258 {
 public:
-  /*!
-   * PT2258 Datatype declaration Class Constructor
-   * @class
-   * @param {number} address - Set the I2C address of the IC address (read the PT2258 address on top for correct use).
-   */
+  
   PT2258(uint8_t address);
 
-  /*!
-   * Start the I2C communication
-   * @method
-   * @return {number} Return 1:successful, 0:connection error
-   */
   uint8_t begin(void);
-
-  /*!
-   * Set the individual channel attenuation in db
-   * @method
-   * @param {number} channel - Channel to set, form 1 to 6
-   * @param {number} db - Attenuation in db from 0 (0db) to 79 (79db)
-   */
   void attenuation(uint8_t channel,  uint8_t attenuation);
-
-  /*!
-   * Set the attenuation of all the channels at once in db
-   * @method
-   * @param {number} - db Attenuation in db from 0 (0db) to 79 (79db)
-   */
   void attenuationAll(uint8_t attenuation);
-
-  /*!
-   * Set the individual channel volume
-   * @method
-   * @param {number} channel - Channel to set, form 1 to 6
-   * @param {number} volume - Volume from 0 (min) to 100 (max)
-   */
   void volume(uint8_t channel,  uint8_t volume);
-
-   /*!
-   * Set the volume of all the channels at once
-   * @method
-   * @param {number} volume - Volume from 0 (min) to 100 (max)
-   */
   void volumeAll(uint8_t volume);
-
-  /*!
-   * Mute control for all the channels. No matter the volume, the channels will stay silent.
-   * It has to be disabled to hear something.
-   * @method
-   * @param {number} mute - Mute active (1, true) or mute not active (0, false)
-   */
   void mute(bool mute);
 
 private:
@@ -164,13 +129,6 @@ private:
    * @param {number} current - IC address 
    */
   uint8_t address;
-
-  /*!
-   * Send the datas to the IC
-   * @method
-   * @param {number} a - 10dB byte value
-   * @param {number} b - 1dB byte value
-   */
   void PT2258Send(uint8_t a, uint8_t b);
 
 };

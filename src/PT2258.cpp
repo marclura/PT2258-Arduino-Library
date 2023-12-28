@@ -1,10 +1,18 @@
 /*
   @file PT2258.cpp
 
+  @mainpage PT2258 Arduino Library
+
+  @section intro_sec Introduction
+
   This library is to control the 6-Channel Electronic Volume Controller IC PT2258
+
+  @section author Author
 
   Created by Marco Lurati, April 21, 2023
   
+  @section license License
+
   MIT License
 
   Copyright (c) 2023 marclura
@@ -51,11 +59,21 @@ uint8_t channel_address_10[6] = {
   PT2258_CH6_10
 };
 
+/*!
+  * @brief PT2258 Datatype declaration Class Constructor
+  * 
+  * @param {number} address - Set the I2C address of the IC address (read the PT2258 address on top for correct use).
+  */
 PT2258::PT2258(uint8_t _address)
 {
   address = _address >> 1;   // right-shift one bit because Wire library uses 7bit addresses
 }
 
+/*!
+  * @brief Start the I2C communication
+  * 
+  * @return {number} Return 1:successful, 0:connection error
+  */
 uint8_t PT2258::begin(void)
 {
   //Wire.setClock(100000);  // setting the clock to 100kHz as indicated in the datasheet
@@ -71,6 +89,12 @@ uint8_t PT2258::begin(void)
   return return_status;
 }
 
+/*!
+  * @brief Set the individual channel attenuation in db
+  * 
+  * @param {number} channel - Channel to set, form 1 to 6
+  * @param {number} db - Attenuation in db from 0 (0db) to 79 (79db)
+  */
 void PT2258::attenuation(uint8_t channel, uint8_t attenuation)
 {
   uint8_t c = attenuation;
@@ -80,6 +104,11 @@ void PT2258::attenuation(uint8_t channel, uint8_t attenuation)
   PT2258Send(channel_address_10[channel-1] + a, channel_address_1[channel-1] + b);
 }
 
+/*!
+  * @brief Set the attenuation of all the channels at once in db
+  * 
+  * @param {number} - db Attenuation in db from 0 (0db) to 79 (79db)
+  */
 void PT2258::attenuationAll(uint8_t attenuation)
 {
   uint8_t c = attenuation;
@@ -89,6 +118,12 @@ void PT2258::attenuationAll(uint8_t attenuation)
   PT2258Send(PT2258_CHALL_10 + a, PT2258_CHALL_1 + b);
 }
 
+ /*!
+  * @brief Set the individual channel volume
+  * 
+  * @param {number} channel - Channel to set, form 1 to 6
+  * @param {number} volume - Volume from 0 (min) to 100 (max)
+  */
 void PT2258::volume(uint8_t channel, uint8_t volume)
 {
   uint8_t c = map(volume, 0, 100, 79, 0);
@@ -98,6 +133,11 @@ void PT2258::volume(uint8_t channel, uint8_t volume)
   PT2258Send(channel_address_10[channel-1] + a, channel_address_1[channel-1] + b);
 }
 
+/*!
+  * @brief Set the volume of all the channels at once
+  *
+  * @param {number} volume - Volume from 0 (min) to 100 (max)
+  */
 void PT2258::volumeAll(uint8_t volume)
 {
   uint8_t c = map(volume, 0, 100, 79, 0);
@@ -106,7 +146,12 @@ void PT2258::volumeAll(uint8_t volume)
 
   PT2258Send(PT2258_CHALL_10 + a, PT2258_CHALL_1 + b);
 }
-
+/*!
+  * @brief Mute control for all the channels. No matter the volume, the channels will stay silent.
+  * It has to be disabled to hear something.
+  * 
+  * @param {number} mute - Mute active (1, true) or mute not active (0, false)
+  */
 void PT2258::mute(bool mute)
 {
   Wire.beginTransmission(address);
@@ -114,6 +159,12 @@ void PT2258::mute(bool mute)
   Wire.endTransmission();
 }
 
+/*!
+   * @brief Send the datas to the IC
+   *
+   * @param {number} a - 10dB byte value
+   * @param {number} b - 1dB byte value
+   */
 void PT2258::PT2258Send(uint8_t a, uint8_t b)
 {
   Wire.beginTransmission(address);
