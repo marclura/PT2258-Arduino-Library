@@ -58,7 +58,7 @@ The PT2258 has the volume of all the channels at the maximum when it powers on (
 
 ## Functions
 
-### PT2258 (address)
+## PT2258 (address)
 Create a new PT2258 Datatype declaration. Set the I2C address of the IC address (read the PT2258 address paragraph on top for correct use).
 
 `PT2258(uint8_t address)`
@@ -66,7 +66,7 @@ Create a new PT2258 Datatype declaration. Set the I2C address of the IC address 
 Example: `PT2258 myPT2258(0x88);`
 
 
-### begin()
+## begin()
 Start the I2C communication. Returns 1:successful, 0:connection error
 
 `uint8_t begin(void)`
@@ -74,7 +74,7 @@ Start the I2C communication. Returns 1:successful, 0:connection error
 Example: `myPT2258.begin();`
 
 
-### attenuation(channel, attenuation)
+## attenuation(channel, attenuation)
 Set the individual channel attenuation in db. Indicate the channel number from 1 to 6 to set. Attenuation in db from 0 (0db) to 79 (79db)
 
 `void attenuation(uint8_t channel,  uint8_t attenuation)`
@@ -82,7 +82,7 @@ Set the individual channel attenuation in db. Indicate the channel number from 1
 Example: `myPT2258.attenuation(2, 52);`
 
 
-### attenuationAll(attenuation)
+## attenuationAll(attenuation)
 Set the attenuation of all the channels at once in db. Attenuation in db from 0 (0db) to 79 (79db)
 
 `void attenuationAll(uint8_t attenuation)`
@@ -90,7 +90,7 @@ Set the attenuation of all the channels at once in db. Attenuation in db from 0 
 Example: `myPT2258.attenuationAll(12);`
 
 
-### volume(channel, volume)
+## volume(channel, volume)
 Set the individual channel volume. Indicate the channel number from 1 to 6 to set. Volume from 0 (min) to 100 (max)
 
 `void volume(uint8_t channel,  uint8_t volume)`
@@ -98,7 +98,7 @@ Set the individual channel volume. Indicate the channel number from 1 to 6 to se
 Example: `myPT2258.volume(3, 85);`
 
 
-### volumeAll(volume)
+## volumeAll(volume)
 Set the volume of all the channels at once. Volume from 0 (min) to 100 (max)
 
 `void volumeAll(uint8_t volume)`
@@ -106,7 +106,7 @@ Set the volume of all the channels at once. Volume from 0 (min) to 100 (max)
 Example: `myPT2258.volumeAll(100);`
 
 
-### mute(boolean)
+## mute(boolean)
 Mute control for all the channels. No matter the volume, the channels will stay silent. It has to be disabled to hear something. Mute active (1, true) or mute not active (0, false)
 
 `void mute(bool mute)`
