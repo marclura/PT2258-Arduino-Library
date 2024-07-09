@@ -35,6 +35,58 @@ If you need to change it, crete the PT2258 object like this:
 
 Example: `PT2258 myPT2258(0x84);`
 
+### Control multiple chips at the same time
+
+If you need to controle more than one chip at the time, create multiple instances of the PT2258 object like this:
+
+```
+PT2258 mixerA(0x84);    // CODE1 = 0, CODE2 = 1 (for example)
+PT2258 mixerB(0x88);    // CODE1 = 1, CODE2 = 0 (for example)
+
+and so on...
+
+void setup() {
+    Serial.begin(9600);
+
+    Wire.begin(); // start the I2C bus
+
+    if(!mixerA.begin()) { // initialise the PT2258 mixerA chip
+        Serial.println("mixerA: connection error!");
+        while(1) delay(10);
+    }
+
+    if(!mixerB.begin()) { // initialise the PT2258 mixerB chip
+        Serial.println("mixerB: connection error!");
+        while(1) delay(10);
+    }
+
+    mixerA.volumeAll(0);  // at the beginning the volume is by default at 100%. Set the desired volume at startup before unmuting next
+    mixerA.mute(false); // the mute is active when the device powers up. Unmute it to ear the sound
+
+    mixerB.volumeAll(0);  // at the beginning the volume is by default at 100%. Set the desired volume at startup before unmuting next
+    mixerB.mute(false); // the mute is active when the device powers up. Unmute it to ear the sound
+
+}
+
+void loop() {
+
+    // your code. Control mixerA and mixerB independently. Here an example:
+
+    mixerA.volume(2, 100);
+
+    mixerB.mute(true);
+
+}
+
+```
+
+#### Notes
+
+The maxiumum amount of PT2258 chip you can connect to the same I2C bus is 4 (beacsue of the 4 possible addresses that the chips can have). Set them up in order that they have a different address by changing the pin CODE1 and CODE2 (see the PT2258 address table above).
+
+The PT2258 objects you create can be named as you prefer (in the example above are mixerA and mixerB). Set the names makes more sense for you.
+Consider it as defining a new variable, where the data type is PT2258. Conceptually int variable = 0; is the same as saying PT2258 myMixer;
+
 
 ### Wire connection
 The PT2258 is specified to work with a bus clock speed of 100kHz max.
