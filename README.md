@@ -37,7 +37,7 @@ Example: `PT2258 myPT2258(0x84);`
 
 ### Control multiple chips at once
 
-If you need to control more than one chip at one, create multiple instances (objects) of the PT2258 class like this (example with two chips):
+If you need to control more than one chip at once, create multiple instances (objects) of the PT2258 class like this (example with two chips):
 
 ```
 PT2258 mixerA(0x84);    // CODE1 = 0, CODE2 = 1 (for example)
