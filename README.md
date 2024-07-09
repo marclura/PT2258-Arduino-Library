@@ -35,15 +35,14 @@ If you need to change it, crete the PT2258 object like this:
 
 Example: `PT2258 myPT2258(0x84);`
 
-### Control multiple chips at the same time
+### Control multiple chips at once
 
-If you need to controle more than one chip at the time, create multiple instances of the PT2258 object like this:
+If you need to control more than one chip at one, create multiple instances (objects) of the PT2258 class like this (example with two chips):
 
 ```
 PT2258 mixerA(0x84);    // CODE1 = 0, CODE2 = 1 (for example)
 PT2258 mixerB(0x88);    // CODE1 = 1, CODE2 = 0 (for example)
 
-and so on...
 
 void setup() {
     Serial.begin(9600);
@@ -82,10 +81,10 @@ void loop() {
 
 #### Notes
 
-The maxiumum amount of PT2258 chip you can connect to the same I2C bus is 4 (beacsue of the 4 possible addresses that the chips can have). Set them up in order that they have a different address by changing the pin CODE1 and CODE2 (see the PT2258 address table above).
+The maximum amount of PT2258 chips you can connect to the same I2C bus is 4 (because of the four possible addresses that the chips can have). Set them up in order that they have a different address by changing the pin CODE1 and CODE2 (see the PT2258 address table above).
 
-The PT2258 objects you create can be named as you prefer (in the example above are mixerA and mixerB). Set the names makes more sense for you.
-Consider it as defining a new variable, where the data type is PT2258. Conceptually int variable = 0; is the same as saying PT2258 myMixer;
+The PT2258 objects you create can be named as you prefer (mixerA and mixerB in the example above). Use names that make more sense to you.
+Consider it as defining a new variable where the data type is PT2258; conceptually int my_variable = 0; is the same as saying PT2258 myMixer;
 
 
 ### Wire connection
